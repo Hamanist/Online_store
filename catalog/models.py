@@ -3,8 +3,16 @@ from django.db import models
 
 # Create your models here.
 class Category(models.Model):
-    name = models.CharField(max_length=100)
-    description = models.TextField(null=True, blank=True)
+    name = models.CharField(max_length=100, verbose_name='категория продукта')
+    description = models.TextField(null=True, blank=True, verbose_name='описание продукта')
+
+    def __str__(self):
+        return f'{self.name} {self.description}'
+
+    class Meta:
+        verbose_name = 'категория продукта'
+        verbose_name_plural = 'категории продуктов'
+        ordering = ('name',)
 
 
 class Product(models.Model):
@@ -15,6 +23,3 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=7, decimal_places=2, verbose_name='цена')
     created_at = models.DateField(auto_now_add=True)
     updated_at = models.DateField(auto_now=True)
-
-
-
