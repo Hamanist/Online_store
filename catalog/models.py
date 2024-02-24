@@ -23,7 +23,7 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=7, decimal_places=2, verbose_name='цена')
     created_at = models.DateField(auto_now_add=True)
     updated_at = models.DateField(auto_now=True)
-    manufactured_at = models.IntegerField(default=0)
+
 
     def __str__(self):
         return f'{self.name} {self.image} {self.price} {self.created_at} {self.updated_at}'
