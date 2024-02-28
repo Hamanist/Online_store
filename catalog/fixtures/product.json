@@ -8,8 +8,8 @@
       "image": "",
       "category": 1,
       "price": "99999.00",
-      "created_at": "2024-02-26",
-      "updated_at": "2024-02-26"
+      "created_at": "2024-02-27",
+      "updated_at": "2024-02-27"
     }
   },
   {
@@ -21,8 +21,8 @@
       "image": "",
       "category": 1,
       "price": "49999.00",
-      "created_at": "2024-02-26",
-      "updated_at": "2024-02-26"
+      "created_at": "2024-02-27",
+      "updated_at": "2024-02-27"
     }
   },
   {
@@ -34,8 +34,8 @@
       "image": "",
       "category": 2,
       "price": "15999.00",
-      "created_at": "2024-02-26",
-      "updated_at": "2024-02-26"
+      "created_at": "2024-02-27",
+      "updated_at": "2024-02-27"
     }
   },
   {
@@ -47,8 +47,8 @@
       "image": "",
       "category": 3,
       "price": "3999.00",
-      "created_at": "2024-02-26",
-      "updated_at": "2024-02-26"
+      "created_at": "2024-02-27",
+      "updated_at": "2024-02-27"
     }
   },
   {
@@ -60,8 +60,8 @@
       "image": "",
       "category": 4,
       "price": "7999.00",
-      "created_at": "2024-02-26",
-      "updated_at": "2024-02-26"
+      "created_at": "2024-02-27",
+      "updated_at": "2024-02-27"
     }
   }
 ]
