@@ -9,6 +9,11 @@ class BlogListView(ListView):
     model = Blog
     extra_context = {'title': 'Блог'}
 
+    def get_queryset(self, *args, **kwargs):
+        queryset = super().get_queryset(*args, **kwargs)
+        queryset = queryset.filter(publication_sign=True)
+        return queryset
+
 
 class BlogDetailView(DetailView):
     model = Blog
