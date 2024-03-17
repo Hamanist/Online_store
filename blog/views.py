@@ -14,7 +14,11 @@ class BlogDetailView(DetailView):
     model = Blog
     extra_context = {'title': 'Описание Блога'}
 
-    # def get_object(self, queryset=None):
+    def get_object(self, queryset=None):
+        self.object = super().get_object(queryset)
+        self.object.number_of_views += 1
+        self.object.save()
+        return self.object
 
 
 class BlogCreateView(CreateView):
