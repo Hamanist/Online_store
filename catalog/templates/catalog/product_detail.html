@@ -17,6 +17,9 @@
                     <li>- Описание: {{ object.description }}</li>
                 </ul>
                 <button type="button" class="btn btn-lg btn-block btn-outline-primary">Купить</button>
+                <a href="{% url 'catalog:delete_product' object.pk %}" type="button"
+                   class="btn btn-lg btn-block btn-outline-danger ms-2">Удалить</a>
+
             </div>
         </div>
     </div>
