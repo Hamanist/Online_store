@@ -1,7 +1,8 @@
 from django.shortcuts import render
-from django.urls import reverse_lazy
-from django.views.generic import ListView, DetailView, TemplateView, DeleteView
+from django.urls import reverse_lazy, reverse
+from django.views.generic import ListView, DetailView, TemplateView, DeleteView, CreateView, UpdateView
 
+from catalog.forms import ProductForm
 from catalog.models import Product
 
 
@@ -25,5 +26,16 @@ class ProductDeleteView(DeleteView):
     success_url = reverse_lazy('catalog:home')
 
 
+class ProductCreateView(CreateView):
+    model = Product
+    form_class = ProductForm
+    success_url = reverse_lazy('catalog:home')
 
 
+class ProductUpdateView(UpdateView):
+    model = Product
+    form_class = ProductForm
+    success_url = reverse_lazy('catalog:home')
+
+    def get_success_url(self):
+        return reverse('catalog:view_product', args=[self.kwargs.get('pk')])
