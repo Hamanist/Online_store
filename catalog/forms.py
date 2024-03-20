@@ -13,7 +13,7 @@ class ProductForm(forms.ModelForm):
         cleaned_data = self.cleaned_data['name']
         for word in words:
             if word in cleaned_data.lower():
-                raise forms.ValidationError('Запрещенные слова' + word)
+                raise forms.ValidationError('Запрещенные слова ' + word)
         return cleaned_data
 
     def clean_description(self):
@@ -21,5 +21,5 @@ class ProductForm(forms.ModelForm):
         cleaned_data = self.cleaned_data['description']
         for word in words:
             if word in cleaned_data.lower():
-                raise forms.ValidationError('Запрещенные слова' + word)
+                raise forms.ValidationError('Запрещенные слова ' + word)
         return cleaned_data
