@@ -3,7 +3,7 @@
 {% block content %}
 <a href="{% url 'catalog:create_product' %}" type="button" class="btn btn-success mb-4">Создать продукт</a>
 <div class="row text-center">
-    {% for object in object_list %}
+    {% for object in products %}
     <div class="col-3">
         <div class="card mb-4 box-shadow">
             <div class="card-header">
@@ -12,8 +12,8 @@
             <div class="card-body">
                 <ul class="list-unstyled mt-3 mb-4 text-start m-3">
                     <li>- Описание: {{ object.description|truncatechars:100 }}</li>
+                    <li>- Активная версия: <strong>{{ object.active_version }}</strong></li>
                 </ul>
-
                 <a href="{% url 'catalog:view_product' object.pk %}" type="button"
                    class="btn btn-lg btn-block btn-outline-primary">Описание</a>
                 <a href="{% url 'catalog:edit_product' object.pk %}" type="button"
