@@ -1,9 +1,18 @@
 from django import forms
 
-from catalog.models import Product
+from catalog.models import Product, ProductVersion
 
 
-class ProductForm(forms.ModelForm):
+class StyleMixin:
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for field_name, field in self.fields.items():
+            field.widget.attrs['class'] = 'form-control'
+            if isinstance(field, forms.BooleanField):
+                field.widget.attrs['class'] = 'form-check-input'
+
+
+class ProductForm(StyleMixin, forms.ModelForm):
     class Meta:
         model = Product
         fields = '__all__'
@@ -23,3 +32,9 @@ class ProductForm(forms.ModelForm):
             if word in cleaned_data.lower():
                 raise forms.ValidationError('Запрещенные слова ' + word)
         return cleaned_data
+
+
+class ProductVersionForm(StyleMixin, forms.ModelForm):
+    class Meta:
+        model = ProductVersion
+        fields = '__all__'
